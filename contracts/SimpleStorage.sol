@@ -11,7 +11,10 @@ pragma solidity ^0.8.7;
     a workable contract. so this is kinda
     valid contract.
     congo writing valid contract...
+    
 */
+
+//experimenting git options
 contract SimpleStorage {
 
 

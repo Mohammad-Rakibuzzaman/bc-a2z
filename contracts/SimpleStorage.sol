@@ -16,6 +16,13 @@ pragma solidity ^0.8.7;
 
 //experimenting git options
 contract SimpleStorage {
+    //primitive datatype uint256, int256, bool, string, address, bytes32
+    
+    uint256 public favoriteNumber;
+
+    function store(uint256 _favoriteNumber) public {
+        favoriteNumber = _favoriteNumber;
+    }
 
 
 

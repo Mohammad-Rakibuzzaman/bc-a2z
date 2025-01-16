@@ -19,7 +19,44 @@ contract SimpleStorage {
     //primitive datatype uint256, int256, bool, string, address, bytes32
     
     //here public is kind of retrieve function which returns some uint value 
-    uint256 public favoriteNumber;
+    // uint256 public favoriteNumber;
+    uint256 favoriteNumber;
+    
+    //this is long processes to create objects
+    // People public person = People({favoriteNumber: 2, name: "Patrick"});
+    // People public person2 = People({favoriteNumber: 6, name: "Allyes"});
+    // People public person3 = People({favoriteNumber: 7, name: "Cr"});
+
+    
+    
+    
+
+
+    struct People {
+        uint256 favoriteNumber;
+        string name;
+    }
+
+    // uint256[] public favoriteNumbersList;
+    //so we gonna create array data structure
+    // People[] public people; //removing because no need duplicate function we already have retrieve function returning the same value
+    People[] public people;
+
+    //calldata, memory, storage
+    //calldata is a temporary variable that cant be modified
+    //memory is a temporary variable that can be modified
+    //Storage is a permanent variable that can be modified
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+        // we can also create new array like
+        // People memory newPerson = People({favoriteNumber:_favoriteNumber, name: _name});
+        // People memory newPerson = People(_favoriteNumber, _name);
+        
+        // people.push(People(_favoriteNumber, _name));
+        // people.push(newPerson);
+        _name = "cat";
+        people.push(People(_favoriteNumber, _name)); //same as uppers. now we dont even need memory here also
+
+    }
 
     function store(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
@@ -45,13 +82,24 @@ contract SimpleStorage {
     //     return (1+1);
     // }
 
-
     /*
     // scope
     function something() public {
         testVar = 6;
     }
     */
+
+
+    
+
+
+
+
+
+
+
+
+
 
 
 }

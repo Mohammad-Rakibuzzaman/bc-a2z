@@ -14,6 +14,14 @@ pragma solidity ^0.8.7;
     
 */
 
+//EVM ethereum virtual machine
+/* evm is the standards of how to deploy smart 
+    contracts to ethereum like blockchains.and any blockchain
+    that implements a type of evm we can deploy solidity code
+    too. 
+    evm compatible blockchains are : avalanche, fantom, polygon
+ */ 
+
 //experimenting git options
 contract SimpleStorage {
     //primitive datatype uint256, int256, bool, string, address, bytes32
@@ -28,7 +36,9 @@ contract SimpleStorage {
     // People public person3 = People({favoriteNumber: 7, name: "Cr"});
 
     
-    
+    //mapping
+    mapping(string => uint256) public nameToFavoriteNumber;
+
     
 
 
@@ -53,8 +63,12 @@ contract SimpleStorage {
         
         // people.push(People(_favoriteNumber, _name));
         // people.push(newPerson);
-        _name = "cat";
+        // _name = "cat";
         people.push(People(_favoriteNumber, _name)); //same as uppers. now we dont even need memory here also
+
+        //lets add mapping capability
+        nameToFavoriteNumber[_name] = _favoriteNumber;
+
 
     }
 
